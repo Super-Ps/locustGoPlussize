@@ -1,0 +1,65 @@
+
+# 权重配置 
+cases:
+#    -
+#        type: "go"
+#        fn: "cases.CatFullinfo"
+#        name: "CatFullinfo"
+#        enable: true
+#        weight: 1
+#
+#    -
+#        type: "go"
+#        fn: "cases.PassPortLogin"
+#        name: "PassPortLogin"
+#        enable: true
+#        weight: 1
+#    -
+#        type: "go"
+#        fn: "cases.HttpProxyDemo"
+#        name: "HttpProxyDemo"
+#        enable: False
+#        weight: 1
+#    -
+#        type: "go"
+#        fn: "cases.FastHttpGetDemo"
+#        name: "FastHttpGetDemo"
+#        enable: True
+#        weight: 1
+#    -
+#        type: "go"
+#        fn: "cases.FastHttpPostDemo"
+#        name: "FastHttpPostDemo"
+#        enable: False
+#        weight: 1
+#    -
+#        type: "go"
+#        fn: "cases.FastHttpProxyDemo"
+#        name: "FastHttpProxyDemo"
+#        enable: False
+#        weight: 1
+    -
+        type: "go"
+        fn: "cases.CustomDemo"
+        name: "CustomDemo"
+        enable: True
+        weight: 1
+
+# 其他自定义配置
+custom:
+    url: "http://127.0.0.1:5555"
+    get_route: "/getdemo"
+    post_route: "/postdemo"
+    content_type: "application/json"
+    http_proxy: "127.0.0.1:8080"
+#custom:
+#    url: "https://passport-api-test.makeblock.com/"
+#    get_route: "v1/user/fullinfo"
+#    post_route:
+#    -
+#        "v1/login"
+#    -
+#        "v1/user/signature"
+#
+#    content_type: "application/json"
+#    http_proxy: "127.0.0.1:8080"

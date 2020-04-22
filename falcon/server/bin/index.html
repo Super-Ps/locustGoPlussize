@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Monitor</title>
+    <link rel="stylesheet" type="text/css" href="{{.staticRoute}}/style.css" media="screen">
+    <link rel="shortcut icon" href="{{.staticRoute}}/img/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div class="top">
+    <div class="top-content container">
+        <img src="{{.staticRoute}}/img/logo.png" class="logo" />
+        <div class="boxes">
+            <div class="top_box" id="box_custom">
+                <a href="{{.startRoute}}" class="start-button" id="start_button"><font size="4">▷</font><br>&nbsp; Start &nbsp;</a>
+                <a href="{{.stopRoute}}" class="stop-button" id="stop_button"><font size="4">‖</font><br>&nbsp; Stop &nbsp;</a>
+                <a href="{{.restartRoute}}" class="restart-button" id="restart_button"><font size="4">◎</font><br>Restart</a>
+                <a href="{{.exitRoute}}" class="exit-button" id="exit_button"><font size="4">x</font><br>&nbsp;&nbsp; Exit &nbsp;&nbsp;</a>
+                <a class="message-text"></a>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<div class="main">
+    <div class="status" id="status">
+        <nav class="menu">
+            <ul class="tabs container">
+                <li><a href="#" id="monitor_tab">Monitor</a></li>
+                <li><a href="#" id="server_charts_tab">Server Charts</a></li>
+                <li><a href="#" id="process_charts_tab">Process Charts</a></li>
+            </ul>
+        </nav>
+        <div class="panes container">
+            <div id="Monitor" style="display:none;">
+                <div class="title-text">
+                    <label><font size="4"><b>Machine Information:</b></font></label>
+                </div>
+                <table id="machine_info" class="stats">
+                    <thead>
+                    <tr>
+                        <th class="stats_label name" href="#" data-sortkey="host_name" title="OS infomation">OS</th>
+                        <th class="stats_label name" href="#" data-sortkey="cpu_model_name" title="CPU infomation">CPU</th>
+                        <th class="stats_label name" href="#" data-sortkey="men_virtual_total" title="Memory infomation">Memory</th>
+                        <th class="stats_label name" href="#" data-sortkey="disk_size_total" title="Disk infomation">Disk</th>
+                        <th class="stats_label name" href="#" data-sortkey="net_card_name" title="Network infomation">Network</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="title-text">
+                    <label><font size="4"><b><br/>Server Monitor:</b></font></label>
+                </div>
+                <table id="server_monitor" class="stats">
+                    <thead>
+                    <tr>
+                        <th class="stats_label name" href="#" data-sortkey="time" title="Os Time">Time</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="processes" title="Total of process">Processes</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="handles" title="All Process handles">Handles</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="threads" title="All Process threads">Threads</th>
+                        <th class="stats_label name" href="#" data-sortkey="cpu_time" title="Total of process CPU time">CPU Time(s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="cpu_percent" title="CPU percent">CPU(%)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="rss" title="Memory RSS">RSS(MB)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="vms" title="Memory VMS">VMS(MB)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="net_bytes_recv_diff" title="Netcard recv megabytes">Net Recv<br>(MB/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="net_bytes_sent_diff" title="Netcard send megabytes">Net Send<br>(MB/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="net_packets_recv_diff" title="Netcard recv packets">Net Recv<br>(packets/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="net_packets_sent_diff" title="Netcard send packets">Net Send<br>(packets/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_used" title="Total of disk used size">Disk Used<br>(GB)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_read_bytes_diff" title="Disk io read megabytes">IO Read<br>(MB/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_write_bytes_diff" title="Disk io write megabytes">IO Write<br>(MB/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_read_count_diff" title="Disk io read counts">IO Read<br>(counts/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_write_count_diff" title="Disk io write counts">IO Write<br>(counts/s)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="title-text">
+                    <label><font size="4"><b><br/>Processes Monitor:</b></font></label>
+                </div>
+                <div class="title-text">
+                    <label class="title-label"><font size="2"><b>Key Words:</b></font>&nbsp;&nbsp;</label>
+                    <input style="width:300px;" type="text" name="key_word" id="key_word" title="Split by ',' for example: test1.exe,test2.exe"/>&nbsp;&nbsp;
+                    <button class="search-button" id="keyword_search_button"><b>Search</b></button>
+                </div>
+                <table id="process_monitor" class="stats">
+                    <thead>
+                    <tr>
+                        <th class="stats_label name" href="#" data-sortkey="name" title="Name">Name</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="bit" title="Bit of process">Bit</th>
+                        <th class="stats_label name" href="#" data-sortkey="user_name" title="User Name">User</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="pid" title="Pid">Pid</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="ppid" title="PPid">PPid</th>
+                        <th class="stats_label name" href="#" data-sortkey="run_time" title="Run time">Run Time(s)</th>
+                        <th class="stats_label name" href="#" data-sortkey="cmd" title="Cmd line">Cmdline</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="handles" title="Handles">Handles</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="threads" title="Threads">Threads</th>
+                        <th class="stats_label name" href="#" data-sortkey="cpu_time" title="CPU time">CPU Time(s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="cpu_percent" title="CPU percent">CPU(%)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="rss" title="Memory RSS">RSS(MB)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="vms" title="Memory VMS">VMS(MB)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_read_bytes_diff" title="Disk io read megabytes">IO Read<br>(MB/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_write_bytes_diff" title="Disk io write megabytes">IO Write<br>(MB/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_read_count_diff" title="Disk io read counts">IO Read<br>(counts/s)</th>
+                        <th class="stats_label numeric" href="#" data-sortkey="disk_write_count_diff" title="Disk io write counts">IO Write<br>(counts/s)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div id="server_charts" style="display:none;">
+                <div class="server-charts-container" id="server_charts_container"></div>
+                <p class="note">Note: There is no persistence of these charts, if you refresh this page, new charts will be created.</p>
+            </div>
+            <div id="process_charts" style="display:none;">
+                <div class="title-text">
+                    <label class="title-label"><font size="2"><b>Pid:</b></font>&nbsp;&nbsp;</label>
+                    <input style="width:300px;" type="text" name="process_pid" id="process_pid" title="Split by ',' for example: 1001,1002"/>&nbsp;&nbsp;
+                    <button class="search-button" id="pid_search_button"><b>Search</b></button>
+                </div>
+                <div class="process-charts-container" id="process_charts_container"></div>
+                <p class="note">Note: There is no persistence of these charts, if you refresh this page, new charts will be created.</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{.staticRoute}}/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="{{.staticRoute}}/jquery.jqote2.min.js"></script>
+    <script type="text/javascript" src="{{.staticRoute}}/jquery.tools.min.js"></script>
+    <!-- echarts from https://github.com/ecomfe/echarts -->
+    <script type="text/javascript" src="{{.staticRoute}}/echarts.common.min.js"></script>
+    <!-- vintage theme of echarts -->
+    <script type="text/javascript" src="{{.staticRoute}}/vintage.js"></script>
+    <script type="text/x-jqote-template" id="monitor-template">
+        {{.sys}}
+    </script>
+    <script type="text/x-jqote-template" id="pro-monitor-template">
+        {{.pro}}
+    </script>
+    <script type="text/x-jqote-template" id="info-template">
+        {{.info}}
+    </script>
+    <script type="text/javascript" src="{{.staticRoute}}/chart.js"></script>
+    <script type="text/javascript" src="{{.staticRoute}}/monitor.js"></script>
+</body>
+</html>

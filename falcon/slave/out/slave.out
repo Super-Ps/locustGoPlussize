@@ -1,0 +1,26 @@
+2020/04/22 11:26:25 Boomer is built with gomq support.
+2020/04/22 11:26:25 Boomer is connected to master(tcp://127.0.0.1:5557) press Ctrl+c to quit.
+[1;36m[2020-04-22 11:26:25] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:config[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:config[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:hatch[0m
+2020/04/22 11:26:31 Hatching and swarming 1 clients at the rate 1 clients/s...
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.onHatch] [falcon/slave/site/boomer/1_event.go:29] Hatching and swarming 1 clients at the rate 1 clients/s...[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:create[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.monitorStartChannel] [falcon/slave/site/boomer/1_monitor.go:44] monitorStartChannel start[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.monitorStopChannel] [falcon/slave/site/boomer/1_monitor.go:73] monitorStopChannel start[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.monitorTaskChannel] [falcon/slave/site/boomer/1_monitor.go:102] monitorTaskChannel start[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:monitor[0m
+[1;36m[2020-04-22 11:26:31] [SYSTEM] [INFO] [boomer.getMonitorInfo] [falcon/slave/site/boomer/1_monitor.go:150] getMonitorInfo start[0m
+[1;36m[2020-04-22 11:26:32] [SYSTEM] [INFO] [boomer.monitorStartChannel] [falcon/slave/site/boomer/1_monitor.go:64] monitorStartChannel stop[0m
+[1;36m[2020-04-22 11:26:32] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:complete[0m
+[1;36m[2020-04-22 11:26:32] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:hatch_over[0m
+[1;36m[2020-04-22 11:26:54] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:stop[0m
+[1;36m[2020-04-22 11:26:54] [SYSTEM] [INFO] [boomer.onStop] [falcon/slave/site/boomer/1_event.go:161] stopTask start[0m
+[1;36m[2020-04-22 11:26:54] [SYSTEM] [INFO] [boomer.monitorTaskChannel] [falcon/slave/site/boomer/1_monitor.go:121] monitorTaskChannel stop[0m
+[1;36m[2020-04-22 11:26:54] [USER] [INFO] [cases.(*CaseEntry).OnStop] [falcon/slave/cases/cases.go:104] Worker即将退出! Worker在本Slave(7c8bb636-e593-3ce4-8528-9bd24a688851-JonnypsMacBook-Pro.local_1a9cc3b36f83476a8b770e4265245d9a)的序号:1, Worker在所有Slave中的序号:1, Worker在本Slave的已运行次数:30833[0m
+[1;36m[2020-04-22 11:26:54] [SYSTEM] [INFO] [boomer.monitorStopChannel] [falcon/slave/site/boomer/1_monitor.go:83] monitorStopChannel stop[0m
+[1;36m[2020-04-22 11:26:55] [SYSTEM] [INFO] [boomer.onStop.func1] [falcon/slave/site/boomer/1_event.go:167] stop task over.[0m
+[1;36m[2020-04-22 11:26:55] [SYSTEM] [INFO] [boomer.onStop.func1] [falcon/slave/site/boomer/1_event.go:168] Recv stop message from master, all the goroutines are stopped[0m
+2020/04/22 11:26:55 Recv stop message from master, all the goroutines are stopped
+[1;36m[2020-04-22 11:26:55] [SYSTEM] [INFO] [boomer.(*slaveRunner).recvMessage] [falcon/slave/site/boomer/1_message.go:23] Recv message type:config[0m
+[1;36m[2020-04-22 11:26:55] [SYSTEM] [INFO] [boomer.getMonitorInfo] [falcon/slave/site/boomer/1_monitor.go:166] getMonitorInfo stop[0m
